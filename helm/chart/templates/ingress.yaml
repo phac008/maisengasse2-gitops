@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: maisengasse2-ingress
+  namespace: suxess-it-qa
+  labels:
+    app: maisengasse2
+    backstage.io/kubernetes-id: maisengasse2
+spec:
+  ingressClassName: openshift-default
+  rules:
+  - host: maisengasse2-suxess-it-qa.apps.cluster1.mcp.pitagora.at
+    http:
+      paths:
+      - backend:
+          service:
+            name: maisengasse2
+            port:
+              number: 8080
+        path: /
+        pathType: Prefix

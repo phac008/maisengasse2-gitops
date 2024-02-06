@@ -1,0 +1,3 @@
+fullnameOverride: maisengasse2
+image:
+  repository: quay.io/rbaumgar/monitor-demo-app-jvm
